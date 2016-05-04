@@ -1,5 +1,9 @@
 package true_test;
 
+/**
+ * Created by Tatiana Pereminski on 01/05/2016.
+ */
+
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeClass;

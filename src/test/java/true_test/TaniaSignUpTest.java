@@ -1,5 +1,9 @@
 package true_test;
 
+/**
+ * Created by Tatiana Pereminski on 01/05/2016.
+ */
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -29,7 +33,7 @@ public class TaniaSignUpTest {
 
     @BeforeMethod(alwaysRun = true)
     public void beforeMethodSetUp(){
-        taniaSignUPPage.openElenaSignUPPage();
+        taniaSignUPPage.openTaniaSignUPPage();
     }
 
    @Test
@@ -71,6 +75,13 @@ public class TaniaSignUpTest {
         }
 
         taniaSignUPPage.buttoncontinueButton();
+       assertTrue( "First Name text is confirmed", taniaSignUPPage.CheckFirstNameLabel());
+       assertTrue( "Last Name text is confirmed", taniaSignUPPage.CheckLastNameLabel());
+       assertTrue( "Email text is confirmed", taniaSignUPPage.CheckEmailLabel());
+       assertTrue( "Zip Code text is confirmed", taniaSignUPPage.CheckZipCodeLabel());
+       assertTrue( "Company  text is confirmed", taniaSignUPPage.CheckCompanyNameLabel());
+       assertTrue("Check kapcha", taniaSignUPPage.CheckPageForCapthcaMessage());
+
 
     }
 

@@ -1,5 +1,9 @@
 package true_test;
 
+/**
+ * Created by Tatiana Pereminski on 01/05/2016.
+ */
+
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -31,7 +35,7 @@ public class TaniaSignUpNegativeTest {
 
     @BeforeMethod(alwaysRun = true)
     public void beforeMethodSetUp(){
-        taniaSignUPPage.openElenaSignUPPage();
+        taniaSignUPPage.openTaniaSignUPPage();
     }
 
 

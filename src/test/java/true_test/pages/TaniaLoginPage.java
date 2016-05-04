@@ -1,7 +1,7 @@
 package true_test.pages;
 
 /**
- * Created by Elelena Sosnitsky on 01/04/2016.
+ * Created by Tatiana Pereminski on 01/05/2016.
  */
 
 
@@ -9,12 +9,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import true_test.LogLog4j;
 
 import java.util.Random;
+import java.util.logging.Logger;
 
 
 public class TaniaLoginPage extends Page {
-    //private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
+    private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
     private static Random rnd = new Random();
 
 
@@ -47,7 +49,7 @@ public class TaniaLoginPage extends Page {
     //Fill the fields
 
     public TaniaLoginPage openLoginPage() {
-        //Log.info("Opening Login page");
+        Log.info("Opening Login page");
         driver.get(PAGE_URL);
         return this;
     }

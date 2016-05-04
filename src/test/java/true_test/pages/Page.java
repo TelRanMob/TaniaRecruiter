@@ -1,5 +1,9 @@
 package true_test.pages;
 
+/**
+ * Created by Tatiana Pereminski on 01/05/2016.
+ */
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;

@@ -1,20 +1,24 @@
 package true_test.pages;
 
+/**
+ * Created by Tatiana Pereminski on 01/05/2016.
+ */
 
-//import com.telran.LogLog4j;
-//import org.apache.log4j.Logger;
+
+import org.apache.log4j.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import true_test.LogLog4j;
 
 import java.io.IOException;
 import java.util.Random;
 
 public class TaniaSignUPPage extends Page {
-    //private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
+    private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
     private static Random rnd = new Random();
 
 
@@ -98,51 +102,51 @@ public class TaniaSignUPPage extends Page {
         return buf.toString();
     }
 
-    public TaniaSignUPPage openElenaSignUPPage() {
-        //Log.info("Opening TaniaSignUPPage page");
+    public TaniaSignUPPage openTaniaSignUPPage() {
+        Log.info("Opening TaniaSignUPPage page");
         driver.get(PAGE_URL);
         return this;
     }
     //Fill the fields
 
     public TaniaSignUPPage fillFirstnameField(String username) {
-        //Log.info("Filling username field");
+        Log.info("Filling username field");
         setElementText(firstNameField, username);
         return this;
     }
 
     public TaniaSignUPPage fillLastNameField(String lastname) {
-        //Log.info("Filling username field");
+        Log.info("Filling lastname field");
         setElementText(lastNameField, lastname);
         return this;
     }
 
     public TaniaSignUPPage fillemailField(String email) {
-        //Log.info("Filling username field");
+        Log.info("Filling email field");
         setElementText(emailField, email);
         return this;
     }
 
     public TaniaSignUPPage fillzipcodeField(String zipcode) {
-        //Log.info("Filling username field");
+        Log.info("Filling zipcode field");
         setElementText(zipCodeField, zipcode);
         return this;
     }
 
     public TaniaSignUPPage fillzipCode2Field(String zipcode2) {
-        //Log.info("Filling username field");
+        Log.info("Filling zipcode2 field");
         setElementText(zipCode2Field, zipcode2);
         return this;
     }
 
     public TaniaSignUPPage fillcompanyField(String companyName) {
-        //Log.info("Filling username field");
+        Log.info("Filling companyName field");
         setElementText(companyField, companyName);
         return this;
     }
 
     public TaniaSignUPPage buttoncontinueButton() {
-        //Log.info("Filling username field");
+        Log.info("Click To Continue");
         clickElement(continueButton);
         return this;
     }
@@ -151,14 +155,14 @@ public class TaniaSignUPPage extends Page {
     public String generateEmail() {
         String rand = getRandomString(5);
         String username = rand + "@yopmail.com";
-        // Log.info("Doctor's Username generated is <" + username + ">");
+         Log.info("Doctor's Username generated is <" + username + ">");
         return username;
     }
 
 
     public TaniaSignUPPage FillsignUPFields() throws InterruptedException {
-        //Log.info("Filling all fields");
-        openElenaSignUPPage();
+        Log.info("Filling all fields");
+        openTaniaSignUPPage();
         fillFirstnameField("username");
         fillLastNameField("lastname");
         String email = generateEmail();
@@ -166,14 +170,14 @@ public class TaniaSignUPPage extends Page {
         fillzipcodeField("00801");
         fillzipCode2Field("0080");
         fillcompanyField("company");
-        Thread.sleep(15000);
+       // Thread.sleep(15000);
         buttoncontinueButton();
         return this;
     }
 
     public TaniaSignUPPage NoFillUsernameFields() {
-        //Log.info("Filling all fields");
-        openElenaSignUPPage();
+        Log.info("Filling all fields");
+        openTaniaSignUPPage();
         fillFirstnameField("");
         fillLastNameField("lastname");
         String email = generateEmail();
@@ -185,8 +189,8 @@ public class TaniaSignUPPage extends Page {
     }
 
     public TaniaSignUPPage OneNumbFillFirstName() {
-        //Log.info("Filling all fields");
-        openElenaSignUPPage();
+        Log.info("Filling all fields");
+        openTaniaSignUPPage();
         fillFirstnameField("1");
         fillLastNameField("lastname");
         String email = generateEmail();
@@ -198,8 +202,8 @@ public class TaniaSignUPPage extends Page {
     }
 
     public TaniaSignUPPage WrongFillUsernameFields() {
-        //Log.info("Filling all fields");
-        openElenaSignUPPage();
+        Log.info("Filling all fields");
+        openTaniaSignUPPage();
         fillFirstnameField("wewr-324");
         fillLastNameField("lastname");
         String email = generateEmail();
@@ -211,8 +215,8 @@ public class TaniaSignUPPage extends Page {
     }
 
     public TaniaSignUPPage NoFillLastnameFields() {
-        //Log.info("Filling all fields");
-        openElenaSignUPPage();
+        Log.info("Filling all fields");
+        openTaniaSignUPPage();
         fillFirstnameField("username");
         fillLastNameField("");
         String email = generateEmail();
@@ -224,8 +228,8 @@ public class TaniaSignUPPage extends Page {
     }
 
     public TaniaSignUPPage WrongFillLastnameFields() {
-        //Log.info("Filling all fields");
-        openElenaSignUPPage();
+        Log.info("Filling all fields");
+        openTaniaSignUPPage();
         fillFirstnameField("username");
         fillLastNameField("ertr@hh");
         String email = generateEmail();
@@ -238,7 +242,7 @@ public class TaniaSignUPPage extends Page {
 
     public TaniaSignUPPage NoFillEmailFields() {
         //Log.info("Filling all fields");
-        openElenaSignUPPage();
+        openTaniaSignUPPage();
         fillFirstnameField("username");
         fillLastNameField("lastname");
         fillemailField(" ");
@@ -250,7 +254,7 @@ public class TaniaSignUPPage extends Page {
 
     public TaniaSignUPPage WrongFillEmailFields() {
         //Log.info("Filling all fields");
-        openElenaSignUPPage();
+        openTaniaSignUPPage();
         fillFirstnameField("username");
         fillLastNameField("lastname");
         fillemailField("24354656 ");
@@ -262,7 +266,7 @@ public class TaniaSignUPPage extends Page {
 
     public TaniaSignUPPage WrongFillZipCodeFields() {
         //Log.info("Filling all fields");
-        openElenaSignUPPage();
+        openTaniaSignUPPage();
         fillFirstnameField("username");
         fillLastNameField("lastname");
         String email = generateEmail();
@@ -275,7 +279,7 @@ public class TaniaSignUPPage extends Page {
 
     public TaniaSignUPPage NoFillZipCodeFields() {
         //Log.info("Filling all fields");
-        openElenaSignUPPage();
+        openTaniaSignUPPage();
         fillFirstnameField("username");
         fillLastNameField("lastname");
         String email = generateEmail();
@@ -288,7 +292,7 @@ public class TaniaSignUPPage extends Page {
 
     public TaniaSignUPPage FillZipCodeFieldsofLetters() {
         //Log.info("Filling all fields");
-        openElenaSignUPPage();
+        openTaniaSignUPPage();
         fillFirstnameField("username");
         fillLastNameField("lastname");
         String email = generateEmail();

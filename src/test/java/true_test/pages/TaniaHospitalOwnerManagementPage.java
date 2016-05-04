@@ -1,16 +1,22 @@
 package true_test.pages;
 
+/**
+ * Created by Tatiana Pereminski on 01/05/2016.
+ */
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import true_test.LogLog4j;
 
 import java.io.IOException;
 
 
 public class TaniaHospitalOwnerManagementPage extends Page {
-
+    private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
 
     // battons
     @FindBy(xpath="//*[@id='hospital-rewrite']/div[1]/a[1]")
@@ -39,7 +45,7 @@ public class TaniaHospitalOwnerManagementPage extends Page {
     }
 
     public TaniaHospitalOwnerManagementPage openAdminPage() {
-        //Log.info("Opening SignUp page");
+        Log.info("Opening SignUp page");
         driver.get(PAGE_URL);
         return this;
     }
@@ -64,6 +70,7 @@ public class TaniaHospitalOwnerManagementPage extends Page {
         for (rowNumber = 0; rowNumber <= Chec; rowNumber++) {
             String locator = "//*[@id='row" + rowNumber + "']/td[1]/input";
             WebElement box = driver.findElement(By.xpath(locator));
+            Log.info("Checking box with status "+status+". Box number "+rowNumber);
             box.click();
         }
     }

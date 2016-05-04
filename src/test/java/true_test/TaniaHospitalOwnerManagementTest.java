@@ -1,5 +1,10 @@
 package true_test;
 
+/**
+ * Created by Tatiana Pereminski on 01/05/2016.
+ */
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -11,8 +16,9 @@ import true_test.pages.TaniaLoginPage;
 
 
 public class TaniaHospitalOwnerManagementTest {
+    private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
 
-    public TaniaHospitalOwnerManagementPage elenaHOMtPage;
+    public TaniaHospitalOwnerManagementPage taniaHospOwManagP;
     public TaniaLoginPage loginpage;
     public WebDriver driver;
     //public String email = "admin@erdocfinder.com";
@@ -23,7 +29,7 @@ public class TaniaHospitalOwnerManagementTest {
        // driver = new ChromeDriver();
         driver = new FirefoxDriver();
         loginpage = PageFactory.initElements(driver, TaniaLoginPage.class);
-        elenaHOMtPage = PageFactory.initElements(driver, TaniaHospitalOwnerManagementPage.class);
+        taniaHospOwManagP = PageFactory.initElements(driver, TaniaHospitalOwnerManagementPage.class);
         loginpage.openLoginPage();
         loginpage.Login();
     }
@@ -31,7 +37,7 @@ public class TaniaHospitalOwnerManagementTest {
     @BeforeMethod(alwaysRun = true)
     public void beforeMethodSetUp() {
 
-        elenaHOMtPage.openAdminPage();
+        taniaHospOwManagP.openAdminPage();
         //  driver.get("http://admin.yikids.com/admin/hospital_owner_management");
     }
 
@@ -39,8 +45,8 @@ public class TaniaHospitalOwnerManagementTest {
         @Test
         public void HospitalOwnTest() {
 
-            System.out.println("Text element ="+ elenaHOMtPage.gettext());
-            elenaHOMtPage.checkCheckbxesStatus(10,"Not Owned Anymore");
+            System.out.println("Text element ="+ taniaHospOwManagP.gettext());
+            taniaHospOwManagP.checkCheckbxesStatus(10,"Not Owned Anymore");
 
 
         }
